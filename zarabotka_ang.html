@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hot-hot construction</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="./css/gallery-grid.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+    
+
+
+
+    <style>
+    .carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+    }
+
+
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom6 {
+  margin-bottom: 20px !important; }
+
+  .u-margin-top6 {
+  margin-top: 60px !important; }
+
+  .heading-secondary {
+color: white;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+ /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;*/
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  }
+
+  .btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20;
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 10rem;
+  /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+ 
+  position: relative;
+  font-size: 13px;
+  /*Change for the <button> element*/
+  border-bottom: none;
+  cursor: pointer; }
+
+
+  .btn:hover {
+  /*go pomestuva kopceto nagore za 3 pikseli*/
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active, .btn:focus {
+  /*koga e kliknato*/
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #777;
+  color: #fff; }
+  .btn--white::after {
+    background-color: #777; 
+}
+
+
+.box img{
+    width:100%;
+    height: auto;
+    max-height: 285px;
+    margin-bottom:15px;
+}
+
+.box{
+    padding: 1%;
+}
+
+
+    .imgHolder span {
+        position: absolute;
+        right: 27px;
+        bottom: 47px;
+        color: #777;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-weight: bolder;
+        padding: 10px;
+
+
+    }
+
+
+    .sticky{
+        position: fixed;
+        top: 0;    /* zapocnuva najgore levo*/
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        -webkit-box-shadow: 0 2px 2px #efefef;
+        box-shadow: 0 2px 2px #efefef;
+        z-index: 999;/*vertical stacking of elements*/
+    }
+
+
+
+    .sticky{
+        padding: 15px 0;
+        background-color: rgba(40, 180, 133, 1);
+    }
+
+
+    .clearfix{
+    zoom:1;
+}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display:block;
+    height: 0;
+    visibility: hidden;
+}
+
+.section-meals{
+    padding: 0;
+    
+}
+.meals-showcase{   
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li{ /* se dodava clear klasata zaradi ovoj float*/
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-img{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;/*the overflow is clipped  and the rest of the content will be visible*/
+    background-color: #000;                
+    
+}
+.meal-img img{
+    opacity: 0.7;/*prozirnost*/
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s; /* animacija*/
+}
+
+.meal-img img:hover {
+   
+    -webkit-transform: scale(1.03);
+   
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+
+
+    </style>
+    
+
+    
+
+</head>
+       <body>
+             <section class="section-semejni">
+
+                    <div class="u-center-text u-margin-bottom8 ">
+                            <h2 class="heading-secondary"style="color:#777;">
+                                Earn with HOT-HOT
+                            </h2>
+                      </div>
+
+
+                      <div id="navbar" class="u-center-text u-margin-bottom6">
+                          
+                            <a href="eco_houses.html" class="btn btn--white ">Family eco houses</a>
+                            <a href="log_cabin.html" class="btn btn--white ">Log Cabin</a>
+
+                            <a href="awning.html" class="btn btn--white ">Awnings</a>
+                            <a href="city_ang.html" class="btn btn--white ">HOT-HOT City</a>
+                      </div>
+
+
+                      <div class="row">
+                          <div class="col-md-10" style="margin:25px auto;line-height: 1.6;">
+                                <p style="text-align:justify;color:#777;">
+                                    Dear, Our construction company Hot-Hot offers you the opportunity to sign up for a contract with our company to become a member of our Hot-Hot Club.As a member of this club, you receive a club card with your own ID number after which you will be registered. This club card offers you many benefits for us and for you. One such example is if you recommend to your friend, family member or acquaintance to use our construction services for the construction of his new house, you will receive cash in the amount of 2% after the first payment made by him (Eg If the house to be built is € 30,000, funds will be transferred to your account in the amount of € 600). If your references continue to third parties, in addition to your financial benefits, your loyalty will be rewarded with additional special bonuses.
+                                </p>
+
+                          </div>
+
+                      </div>
+
+                      <ul class="meals-showcase clearfix">
+                            
+                            <li>
+                                <figure class="meal-img">
+                                    <img src="./images/1.jpg" alt=""> 
+                                 </figure>
+                             </li>
+                             <li>
+                                <figure class="meal-img">
+                                    <img src="./images/brvnari/galerija/slika11.jpg" alt=""> 
+                                 </figure>
+                             </li>
+                             <li>
+                                <figure class="meal-img">
+                                    <img src="./images/brvnari/galerija/slika10.jpg" alt=""> 
+                                 </figure>
+                             </li>
+                             <li>
+                                <figure class="meal-img">
+                                    <img src="./images/brvnari/galerija/slika1.jpg" alt=""> 
+                                 </figure>
+                             </li>
+            
+                     </ul>
+
+                                 
+            </section>
+
+            <section class="section-meals">
+                   
+                   
+                    </section>
+          
+
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+             <script>
+                 baguetteBox.run('.tz-gallery');
+
+
+
+
+                 $(document).ready(function () {
+
+                     $('.tz-gallery').waypoint(function(direction){
+                         if(direction=="down"){
+                             $('#navbar').addClass('sticky');
+                         }else{
+                             $('#navbar').removeClass('sticky');
+                         }
+                     },{
+                         offset:'60px;'
+                     });
+
+                     /*Scrol on button*/
+
+                     $('.js--scroll-to-plan').click(function(){
+                         $('html, body').animate({scrollTop: $('.js--section-plan').offset().top},1000);
+                     });
+
+                     $('.js--scroll-to-start').click(function(){
+                         $('html, body').animate({scrollTop: $('.js--section-features').offset().top},1000);
+                     });
+
+
+
+                     /*NAVIGATION SCROLL*/
+
+                     // Select all links with hashes
+
+                     $(function(){
+                         $('a[href*="#"]')
+                         // Remove links that don't actually link to anything
+                                 .not('[href="#"]')
+                                 .not('[href="#0"]')
+                                 .click(function(event) {
+                                     // On-page links
+                                     if (
+                                             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                                             &&
+                                             location.hostname == this.hostname
+                                     ) {
+                                         // Figure out element to scroll to
+                                         var target = $(this.hash);
+                                         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                                         // Does a scroll target exist?
+                                         if (target.length) {
+                                             // Only prevent default if animation is actually gonna happen
+                                             event.preventDefault();
+                                             $('html, body').animate({
+                                                 scrollTop: target.offset().top
+                                             }, 1000, function() {
+                                                 // Callback after animation
+                                                 // Must change focus!
+                                                 var $target = $(target);
+                                                 $target.focus();
+                                                 if ($target.is(":focus")) { // Checking if the target was focused
+                                                     return false;
+                                                 } else {
+                                                     $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                                                     $target.focus(); // Set focus again
+                                                 };
+                                             });
+                                         }
+                                     }
+                                 });
+
+
+                     });
+
+                     /*Animation on scroll*/
+
+                     $('.js--wp-1').waypoint(function(direction){
+                         $('.js--wp-1').addClass('animated bounceInDown');
+                     },{
+                         offset:'50%'
+                     });
+
+                     $('.js--wp-2').waypoint(function(direction){
+                         $('.js--wp-2').addClass('animated fadeInUp');
+                     },{
+                         offset:'50%'
+                     });
+
+                     /*Mobile navigation*/
+
+                     $('.js--nav-icon').click(function(){
+                         var nav=$('.js--main-nav');
+                         var icon=$('.js--nav-icon i')
+                         nav.slideToggle(200);
+                         if(icon.hasClass('ion-navicon-round')){
+                             icon.addClass('ion-close-round');
+                             icon.removeClass('ion-navicon-round');
+                         }else{
+                             icon.addClass('ion-navicon-round');
+                             icon.removeClass('ion-close-round');
+                         }
+
+
+                     });
+
+
+
+                     /*MAPS*/
+
+                     var map =  new GMaps({
+                         div: '.map',
+                         lat: 38.7437396,
+                         lng:-9.2302438,
+                         zoom: 12
+                     });
+
+
+                     map.addMarker({
+                         lat: 38.7437396,
+                         lng: -9.2302438,
+                         title: 'Lisbon',
+                         infoWindow: {
+                             content: '<p>Our location</p>'
+                         }
+                     });
+
+
+                     /*38.7437396,-9.2302438*/
+
+
+                 });
+
+             </script>
+
+
+    </body>
+</html>

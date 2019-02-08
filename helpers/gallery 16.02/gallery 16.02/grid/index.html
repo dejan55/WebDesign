@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Freebie: 4 Bootstrap Gallery Templates</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="gallery-grid.css">
+	
+	<style>
+	.imgHolder span {
+       position: absolute;
+       left: 17px;
+       top: 0px;
+       background-color: #ffcb0f;
+       font-weight: bolder;
+       padding: 10px;
+       border-radius: 5px;
+       box-shadow: 1px 1px 1px 1px #ffcb0f;
+}
+	</style>
+	
+
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Bootstrap 3 Gallery</h1>
+
+    <p class="page-description text-center">Grid Layout With Zoom Effect</p>
+    
+    <div class="tz-gallery">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/tip105.jpg">
+				 
+				 <div class="imgHolder">
+                    <img src="../images/tip105.jpg" alt="Park">
+					<span>$25.756</span>
+				 </div>	
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/105a.jpg">
+                    <img src="../images/105a.jpg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="../images/105b.jpg">
+                    <img src="../images/105b.jpg" alt="Tunnel">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/tip115.jpg">
+                    <img src="../images/tip115.jpg" alt="Coast">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/115a.jpg">
+                    <img src="../images/115a.jpg" alt="Rails">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/115b.jpg">
+                    <img src="../images/115b.jpg" alt="Traffic">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/tip120.jpg">
+                    <img src="../images/tip120.jpg" alt="Rocks">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/120a.jpg">
+                    <img src="../images/120a.jpg" alt="Benches">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="../images/120b.jpg">
+                    <img src="../images/120b.jpg" alt="Sky">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+</body>
+</html>

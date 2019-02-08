@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="./css/icon-font.css">
+        <link rel="stylesheet" href="./css/about-style.css">
+      
+    <style>
+    body{
+        padding: 0rem;
+    }
+
+ /*MAIN NAVIGATION*/
+
+ .main-nav{
+    /*float: right;*/
+    list-style: none;
+    margin-top:0px;
+    padding-left: 28%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-nav li{ /*site li elemnti vo main-nav*/
+    display: inline-block;/*za da bidat edno do drugo*/
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px ;
+    
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 5px 0;
+    text-decoration: none;
+     text-transform: uppercase;
+    color: #fff;
+    font-size: 130%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s;
+    font-weight: 600;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+/*MOBILE NAVIGATION*/
+.mobile-nav-icon{
+float: right;
+margin-top: 30px;
+cursor: pointer;
+display: none;
+}
+.mobile-nav-icon i{
+font-size: 200%;
+color: white;
+}
+
+
+/*MOBILE NAVIGATION*/
+.mobile-nav-icon{
+float: left;
+margin-top: 20px;
+cursor: pointer;
+display: none;
+}
+.mobile-nav-icon i{
+font-size: 200%;
+color: white;
+}
+
+
+.navbar-wrapper {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+z-index: 10;
+}
+
+
+
+    </style>
+    
+  
+</head>
+<body>
+
+       
+    <section class="section-book">
+
+          
+        <div class="navbar-wrapper" style="width:100%">
+             
+            <ul class="main-nav js--main-nav" style="width:100%">
+                <li><a href="index.html">Дома</a></li>
+                <li><a href="zanas.html">За нас</a></li>
+                <li><a href="ekokukji.html">Семејни еко куќи</a></li>
+                <li><a href="brvnari.html">Брвнари</a></li>
+                <li><a href="nastresnici.html">Настрешници</a></li>
+                <li><a href="komercijalni.html">Комерцијални објекти</a></li>
+                <li><a href="hot-hot-city.html">HOT-HOT CITY</a></li>
+
+                <li><a href="nov_proekt.html" style="color:red;font-weight:bold;">Нов Проект</a></li>
+                <li><a href="kontakt.html">Контакт</a></li>
+
+                
+
+            </ul>
+
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                        
+                    <a href="contact.html"> <img src="./images/ang.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-left:6px; margin-top:-135px;margin-right:4px;">
+                    </a>
+        
+                    <a href="./under_construction/03-comming-soon.html">  <img src="./images/alb.png" class="znaminja-mobile" style="width: 32px; height: 32px; margin-top:-135px; margin-right:4px;"></a>
+        
+                     <img src="./images/mak.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-top:-135px;">
+
+                  
+
+                
+
+            </div><!-- /navbar wrapper -->
+
+
+
+          <div style="text-align:center;margin-bottom:25px;margin-top:-80px; ">
+                    <h2 class="heading-secondary" style="color:white;padding-bottom: 10px;margin-top:45px;">
+                           Информации за контакт
+                    </h2>
+              </div>
+
+            
+
+        <div class="row" style="max-width:140rem;">
+          <!--      
+            <div class="col-md-2" style="margin-right: 0rem;">
+                        <ul class="main-nav js--main-nav" >
+                                <li><a href="index.html">Дома</a></li>
+                                <li><a href="zanas.html">За нас</a></li>
+                                <li><a href="ekokukji.html">Eко куќи</a></li>
+                                <li><a href="brvnari.html">Брвнари</a></li>
+                                <li><a href="nastresnici.html">Настрешници</a></li>
+                                <li><a href="hot-hot-city.html">HOT-HOT CITY</a></li>
+                                <li><a href="kontakt.html">Контакт</a></li>
+
+                            </ul>
+                </div>-->
+
+          <div class="col-md-10" style="margin-left:auto;margin-right:auto;">
+            <div class="book"style="margin-left:-18px;">
+                <div class="book__form">
+                    <form method="post" name="sentMessage" id="contactForm" action="contactengine.php" class="form">
+
+                            <div style="marging-bottom:20px;">
+                                   <!-- <h2 class="heading-secondary" style="color:#b1c9e3">
+                                            Постави прашање
+                                    </h2>-->
+                              </div>
+
+                        <div class="form__group">
+                            <input type="text" name="Name" class="form__input" placeholder="Име и презиме" id="Name" required>
+                            <label for="name" class="form__label">Вашето име</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="email" name="Email" class="form__input" placeholder="Вашата емаил адреса" id="Email" required>
+                            <label for="email" class="form__label">Емаил</label>
+                        </div>
+                        <div class="form__group">
+                            <textarea name="Message" class="form__input" placeholder="Вашата порака" id="Message"></textarea>
+                            
+                        </div>
+                        
+                       
+
+                        <div class="form-group">
+                            <button type="submit" name="submit" id="submit" class="btn btn--green">Испрати &rarr;</button>
+                        </div>
+                       
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    
+
+        </div>
+
+</section>
+<section class="section-features">
+
+       
+        <div class="row">
+            <div class="col-1-of-4">
+                <div class="feature-box">
+                   <i class="feature-box__icon icon-basic-world"></i>
+                   <h3 class="heading-tertiary u-margin-bottom-2">АДРЕСА</h3>
+                   <p class="feature-box__text">Момин Поток</p>
+                   <p class="feature-box__text">ул.1506 бр.80а Скопје</p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+                    <div class="feature-box">
+                       <i class="feature-box__icon icon-basic-smartphone"></i>
+                       <h3 class="heading-tertiary u-margin-bottom-2">ТЕЛЕФОН</h3>
+                       <p class="feature-box__text">+389 2 30 97 141
+                            </p>
+                            <p class="feature-box__text">Факс: +389 2 30 97 013
+                                   </p>
+                    </div>
+                </div>
+
+                <div class="col-1-of-4">
+                        <div class="feature-box">
+                           <i class="feature-box__icon icon-basic-mail"></i>
+                           <h3 class="heading-tertiary u-margin-bottom-2">Е-маил</h3>
+                           <p class="feature-box__text">hot.hot_mk@yahoo.com</p>
+                           <p class="feature-box__text">marketing@hot-hot.com.mk</p>
+                        </div>
+                    </div>
+
+                    <div class="col-1-of-4">
+                            <div class="feature-box">
+                               <i class="feature-box__icon icon-basic-clock"></i>
+                               <h3 class="heading-tertiary u-margin-bottom-2">РАБОТНО ВРЕМЕ</h3>
+                               <p class="feature-box__text">од понделник до сабота
+                                    </p>
+                                    <p class="feature-box__text">
+                                            од 7:00 до 16:00 часот</p>
+                            </div>
+                        </div>
+
+        </div>
+
+  
+
+
+            <div class="row">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.078479975445!2d21.40721608608463!3d42.02004879137877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135414f3f0f314dd%3A0x2841d65ad16a35de!2sHot-Hot+Connstruction!5e0!3m2!1sen!2smk!4v1522334925587" width="100%" height="450" frameborder="0" style="border:1px solid black" allowfullscreen></iframe>
+            </div>
+
+         <!--   <div class="row">
+                    <img src="./images/mapa-hot-hot.png" class="img img-responsive"style="z-index:999;width:100%;height:400px;border:2px solid grey">
+     
+                </div>-->
+
+    </section>
+
+
+        
+
+
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hot-hot construction</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="./css/gallery-grid.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+    
+
+$(window).scroll(function () {
+        if ($(this).scrollTop() > 600) {
+            $('#scrollUp').fadeIn('slow');
+        } else {
+            $('#scrollUp]').fadeOut('slow');
+        }
+    });
+
+    $('#scrollUp').click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
+        return false;
+    });
+
+    
+    </script>
+
+
+
+    <style>
+
+
+        .u-center-text {
+            text-align: center !important; }
+
+        .u-margin-bottom6 {
+            margin-bottom: 30px !important; }
+
+        .u-margin-top6 {
+            margin-top: 60px !important; }
+
+        .heading-secondary {
+            color: white;
+            display: inline-block;
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+             -webkit-background-clip: text;
+             color: transparent;*/
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .btn, .btn:link, .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 10rem;
+            /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+
+            position: relative;
+            font-size: 13px;
+            /*Change for the <button> element*/
+            border-bottom: none;
+            cursor: pointer; }
+
+            @media only screen and (max-width: 600px) {
+                .btn, .btn:link, .btn:visited {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 10px 20;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    display: block;
+                    border-radius: 10rem;
+                    /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+        
+                    position: relative;
+                    font-size: 13px;
+                    /*Change for the <button> element*/
+                    border-bottom: none;
+                    cursor: pointer; }
+        
+}
+
+
+        .btn:hover {
+            /*go pomestuva kopceto nagore za 3 pikseli*/
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0; }
+
+        .btn:active, .btn:focus {
+            /*koga e kliknato*/
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+        .btn--white {
+            background-color: #777;
+            color: #fff; }
+        .btn--white::after {
+            background-color: #777;
+        }
+
+
+        .box img{
+            width:100%;
+            height: auto;
+            max-height: 285px;
+            margin-bottom:15px;
+        }
+
+        .box{
+            padding: 1%;
+        }
+
+
+        .imgHolder span {
+            position: absolute;
+            right: 27px;
+            bottom: 47px;
+            color: #777;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-weight: bolder;
+            padding: 10px;
+
+
+        }
+
+      /* ScrollUP */
+      #scrollUp {
+        background: url(./images/top.png) no-repeat scroll 0 0;
+        bottom: 20px;
+    color: #000;
+    height: 40px;
+    right: 20px;
+    width: 40px;
+    opacity:0.7;
+}
+#scrollUp:hover {
+    background: url(./images/top.png) no-repeat scroll 0 -40px;
+}
+
+ 
+               /*MAIN NAVIGATION*/
+
+.main-nav{
+    /*float: right;*/
+    list-style: none;
+    margin-top:0px;
+    padding-left: 28%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-nav li{ /*site li elemnti vo main-nav*/
+    display: inline-block;/*za da bidat edno do drugo*/
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px ;
+    
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 5px 0;
+    text-decoration: none;
+     text-transform: uppercase;
+    color: #fff;
+    font-size: 80%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s;
+    font-weight: 600;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+/*MOBILE NAVIGATION*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: white;
+}
+
+
+    /*MOBILE NAVIGATION*/
+    .mobile-nav-icon{
+        float: left;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    .mobile-nav-icon i{
+        font-size: 200%;
+        color: white;
+    }
+
+
+    .navbar-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    header{
+    background-image:-webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))) ,url(./images/nastresnica.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) ,url(./images/nastresnica.jpg);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+      background-attachment: fixed;
+    
+}
+
+
+.header-text{
+    position: absolute;
+    width:1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color:#fff;
+}
+    </style>
+
+
+
+
+</head>
+<body>
+
+    <!--TEST-->
+
+ <header>
+        <nav>
+             <div class="row">
+            
+                 
+                    <div class="navbar-wrapper" style="width:100%">
+     
+                            <ul class="main-nav js--main-nav" style="width:100%">
+                                    <li><a href="index_ang.html">Home</a></li>
+                                    <li><a href="about_us.html">About us</a></li>
+                                    <li><a href="eco_houses.html">Family Eco Houses</a></li>
+                                    <li><a href="log_cabin.html">Log Cabin</a></li>
+                                    <li><a href="awning.html">Awning</a></li>
+                                               <li><a href="komercijalni.html">Comercial Buildings</a></li>
+                                               <li><a href="city_ang.html">HOT-HOT CITY</a></li>
+                    
+                                               <li><a href="nov_proekt.html" style="color:red;font-weight:bold;">New Project</a></li>
+                                               <li><a href="contact.html">Contact</a></li>
+                    
+                                               
+                    
+                                           </ul>
+        
+                                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                                        
+                          
+                                    <a href="awning.html"> <img src="./images/ang.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-left:6px; margin-top:-160px;margin-right:4px;">
+                                    </a>
+                        
+                                    <a href="./under_construction/03-comming-soon.html">  <img src="./images/alb.png" class="znaminja-mobile" style="width: 32px; height: 32px; margin-top:-160px; margin-right:4px;"></a>
+                        
+                                    <a href="nastresnici.html">  <img src="./images/mak.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-top:-160px;"></a>
+        
+                                   
+                                
+        
+                            </div><!-- /navbar wrapper -->
+                 
+                 <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                 
+             </div>
+        </nav>
+        <div class="header-text">
+            <h1>AWNINGS</h1>
+            
+        </div>
+     </header>
+
+
+   
+<!--TEST-->  
+<section class="section-semejni">
+
+       
+
+    <div class="u-center-text u-margin-bottom8 ">
+        <h2 class="heading-secondary" style="margin-top:35px;color:#777;">
+            AWNINGS
+        </h2>
+    </div>
+
+
+    <div id="navbar" class="u-center-text u-margin-bottom6">
+
+      
+       
+
+        <a href="#" class="btn btn--white ">PRICES</a>
+
+       
+    </div>
+
+
+
+<div class="tz-gallery">
+ 
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika1.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/nastresnici/slika1.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+         <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika3.jpg">
+                    <img src="./images/nastresnici/slika3.jpg" style="border: 5px solid white;" alt="Tunnel">
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika4.jpg" style="border: 2px solid white;">
+                    <img src="./images/nastresnici/slika4.jpg" style="border: 5px solid white;" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika5.jpg">
+                    <img src="./images/nastresnici/slika5.jpg" alt="Rails">
+                </a>
+            </div>
+           
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika7.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/nastresnici/slika7.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika8.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/nastresnici/slika8.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika9.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/nastresnici/slika9.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/nastresnici/slika10.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/nastresnici/slika10.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+
+               
+
+                   
+
+                </div>
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
+<script>
+    
+    jQuery(document).ready(function ($) {
+    $(window).scroll(function () {
+            if ($(this).scrollTop() > 800) {
+                $('#scrollUp').fadeIn('slow');
+            } else {
+                $('#scrollUp]').fadeOut('slow');
+            }
+        });
+    
+        $('#scrollUp').click(function () {
+            $("html, body").animate({scrollTop: 0}, 1000);
+            return false;
+        });
+    
+    });
+        </script>
+
+<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;"></a>
+
+
+<script src="./js/jquery.scrollUp.min.js"></script>
+</body>
+</html>

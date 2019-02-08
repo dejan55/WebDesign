@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hot-hot construction</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="./css/gallery-grid.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+
+    <style>
+    .carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+    }
+
+
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom6 {
+  margin-bottom: 20px !important; }
+
+  .u-margin-top6 {
+  margin-top: 60px !important; }
+
+  .heading-secondary {
+color: white;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+ /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;*/
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  }
+
+  .btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20;
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 10rem;
+  /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+ 
+  position: relative;
+  font-size: 13px;
+  /*Change for the <button> element*/
+  border-bottom: none;
+  cursor: pointer; }
+
+  @media only screen and (max-width: 600px) {
+                .btn, .btn:link, .btn:visited {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 10px 20;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    display: block;
+                    border-radius: 10rem;
+                    /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+        
+                    position: relative;
+                    font-size: 13px;
+                    /*Change for the <button> element*/
+                    border-bottom: none;
+                    cursor: pointer; }
+        
+}
+
+
+  .btn:hover {
+  /*go pomestuva kopceto nagore za 3 pikseli*/
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active, .btn:focus {
+  /*koga e kliknato*/
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #777;
+  color: #fff; }
+  .btn--white::after {
+    background-color: #777; 
+}
+
+
+.box img{
+    width:100%;
+    height: auto;
+    max-height: 285px;
+    margin-bottom:15px;
+}
+
+.box{
+    padding: 1%;
+}
+
+
+    .imgHolder span {
+        position: absolute;
+        right: 27px;
+        bottom: 47px;
+        color: #777;
+        background-color: rgba(255, 255, 255, 0.8);
+        font-weight: bolder;
+        padding: 10px;
+
+
+    }
+
+
+    .sticky{
+        position: fixed;
+        top: 0;    /* zapocnuva najgore levo*/
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        -webkit-box-shadow: 0 2px 2px #efefef;
+        box-shadow: 0 2px 2px #efefef;
+        z-index: 999;/*vertical stacking of elements*/
+    }
+
+
+
+    .sticky{
+        padding: 15px 0;
+        background-color:white;
+    }
+
+  
+       /*MAIN NAVIGATION*/
+
+.main-nav{
+    /*float: right;*/
+    list-style: none;
+    margin-top:0px;
+    padding-left: 28%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-nav li{ /*site li elemnti vo main-nav*/
+    display: inline-block;/*za da bidat edno do drugo*/
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px ;
+    
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 5px 0;
+    text-decoration: none;
+     text-transform: uppercase;
+    color: #fff;
+    font-size: 80%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s;
+    font-weight: 600;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+/*MOBILE NAVIGATION*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: white;
+}
+
+
+    /*MOBILE NAVIGATION*/
+    .mobile-nav-icon{
+        float: left;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    .mobile-nav-icon i{
+        font-size: 200%;
+        color: white;
+    }
+
+
+    .navbar-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    header{
+    background-image:-webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))) ,url(./images/ecokukja.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) ,url(./images/ecokukja.jpg);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+      background-attachment: fixed;
+    
+}
+
+
+.header-text{
+    position: absolute;
+    width:1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color:#fff;
+}
+    </style>
+    
+
+    
+
+</head>
+       <body>
+
+         <!--TEST-->
+
+         <header>
+                <nav>
+                     <div class="row">
+                    
+                         
+                            <div class="navbar-wrapper" style="width:100%">
+             
+                                <ul class="main-nav js--main-nav" style="width:100%">
+                                    <li><a href="index_ang.html">Home</a></li>
+                                    <li><a href="about_us.html">About us</a></li>
+                                    <li><a href="eco_houses.html">Family Eco Houses</a></li>
+                                    <li><a href="log_cabin.html">Log Cabin</a></li>
+                                    <li><a href="awning.html">Awning</a></li>
+                                               <li><a href="komercijalni.html">Comercial Buildings</a></li>
+                                               <li><a href="city_ang.html">HOT-HOT CITY</a></li>
+                
+                                               <li><a href="nov_proekt.html" style="color:red;font-weight:bold;">New Project</a></li>
+                                               <li><a href="contact.html">Contact</a></li>
+                
+                                               
+                
+                                           </ul>
+                
+                                            <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                                                
+                                  
+                                            <a href="eco_houses.html"> <img src="./images/ang.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-left:6px; margin-top:-160px;margin-right:4px;">
+                                            </a>
+                                
+                                            <a href="./under_construction/03-comming-soon.html">  <img src="./images/alb.png" class="znaminja-mobile" style="width: 32px; height: 32px; margin-top:-160px; margin-right:4px;"></a>
+                                
+                                            <a href="ekokukji.html"><img src="./images/mak.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-top:-160px;">
+                                            </a>
+                                           
+                                        
+                
+                                    </div><!-- /navbar wrapper -->
+                         
+                         <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                         
+                     </div>
+                </nav>
+                <div class="header-text">
+                    <h1>FAMILY ECO HOUSES</h1>
+                    
+                </div>
+             </header>
+
+
+           
+        <!--TEST-->  
+           
+          
+             <section class="section-semejni">
+                 
+                   
+
+                    <div class="u-center-text u-margin-bottom8 ">
+                            <h2 class="heading-secondary" style="margin-top:35px;color:#777">
+                                Family eco houses
+                            </h2>
+                      </div>
+
+
+                      <div id="navbar" class="u-center-text u-margin-bottom6">
+                          
+                            <a href="ecohouses_construction.html" class="btn btn--white ">CONSTRUCTION</a>
+                            <a href="ekokukji_ceni.html" class="btn btn--white ">PRICES</a>
+
+                            <a href="ecohouses_gallery.html" class="btn btn--white ">GALLERY</a>
+                      </div>
+
+                       
+                      <div class="row">
+                     <!-- <div class="col-md-2" style="margin-right: 0rem;">
+                            <ul class="main-nav js--main-nav" >
+                                    <li><a href="index.html">Дома</a></li>
+                                    <li><a href="zanas.html">За нас</a></li>
+                                    <li><a href="ekokukji.html">Eко куќи</a></li>
+                                    <li><a href="brvnari.html">Брвнари</a></li>
+                                    <li><a href="nastresnici.html">Настрешници</a></li>
+                                    <li><a href="hot-hot-city.html">HOT-HOT CITY</a></li>
+                                    <li><a href="kontakt.html">Контакт</a></li>
+    
+                                </ul>
+                    </div>-->
+                    
+                <div class="col-md-11" style="margin-left:auto;margin-right:auto;">
+                    <p style="color:#777; text-align:justify;">
+                        In the last 20 years, this type of house is being built en masse in Europe. Our company is a pioneer in the construction of this system in this region. No building system in history for so short a time has succeeded in replacing the existing building as the system of family ECO houses.
+                    </p>
+                    <p style="color:#777;text-align:justify;">
+                        Family ECO houses follow the modern way of life, which means:
+                            </p>
+                                   <p style="color:#777;text-align:justify;"><b> Living in an ecological environment</b></p>
+                                    
+                                  <p style="color:#777;text-align:justify;">
+                                    l materials used for the performance of such an object are natural and ecological. If we have to work and stay in premises that are polluted in various ways (workplaces, streets, waterways, etc.), let yourself and your family live in an environmentally sound environment. For this reason, this feature of the houses is located on 1st place in the sveti frame.
+                                  </p>      
+                                    <p style="color:#777;text-align:justify;"><b>Low energy objects</b></p>
+                                    
+                                  <p style="color:#777;text-align:justify;">
+                                    Besides the ecological moment, the main feature of these objects is their isolation. Amazing is the fact that with how little energy is heated and cooled these objects. For buildings smaller than 200 m2, it is economically cost-free installation of central heating. They are heated by electric panels that consume very little electricity. This building system contributes to global energy savings. Your electricity bills will be at least twice as low in such a low-energy facility.
+                                  </p>
+
+                                    <p style="color:#777;text-align:justify;"><b>Seismically most sustainable objects</b></p>
+
+                                <p style="color:#777;text-align:justify;">
+                                    Objects constructed with this type of construction are practically impossible to break down in seismic activities. From that side, living in family ECO houses is safe for you and your family.
+                                    The greatest damage that can occur during the seismic activity is the cracks of the gypsum board that do not affect the constructiveness of the building and can be repaired immediately. 
+
+                                </p>
+
+                                    <p style="color:#777;"><b>Construction speed</b></p>
+
+                                    <p style="color:#777;text-align:justify;">
+                                        The average duration of the construction of an object of approx. 100 m2 is 30-40 days on a previously prepared concrete substrate. In proportion to this, you can determine the duration of the building according to your quadrature. The policy of HOT-HOT is at least 1 day before the expiration of the agreed deadline to give you the keys. 
+                                    </p>
+                            
+                                    <p style="color:#777;"><b>Why HOT-HOT HOUSES?</b></p>
+
+                                    <p style="color:#777;text-align:justify;">
+                                        If you decide to build your home, it is our responsibility to help you find the best architectural solution for your taste. This is done by a team of highly educated people (architect, construction engineer and interior design engineer). The next step is to prepare a future project. Once you get the building permits, the overall care for building your home is at HOT-HOT. Your only obligation is to choose the nuances and types of laminate flooring, ceramic tiles, and tint on the walls. We give you the old rule "if you think bad of someone building a house" -not valid for you and building your home will be a short and beautiful life experience.
+                                    </p>
+                  
+                           <p style="color:#777;">
+                            "Let us build your dream"
+                           </p>
+                           <p style="color:#777; text-align:justify;">
+                            After handing over your keys and staying in the home of your dreams our care for you does not stop.
+                            
+                           </p>
+                    
+                        </div>
+            </div>
+
+                 <div class="tz-gallery">
+
+                     <div class="row">
+
+
+                        <!--novi sliki-->
+
+                        <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip 80/tip80.jpg">
+   
+                                    <div class="imgHolder">
+                                        <img src="./images/tip 80/tip80.jpg" style="border: 5px solid white;" alt="Park">
+                                        
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="./images/tip 80/80a.jpg">
+       
+                                        <div class="imgHolder">
+                                            <img src="./images/tip 80/80a.jpg" style="border: 5px solid white;" alt="Park">
+                                           
+                                        </div>
+                                    </a>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="./images/tip 80/80b.jpg">
+       
+                                        <div class="imgHolder">
+                                            <img src="./images/tip 80/80b.jpg" style="border: 5px solid white;" alt="Park">
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+
+                        <!-- 85 -->
+
+                                <div class="col-sm-6 col-md-4">
+                                        <a class="lightbox" href="./images/tip85/85a.jpg">
+           
+                                            <div class="imgHolder">
+                                                <img src="./images/tip85/85a.jpg" style="border: 5px solid white;" alt="Park">
+                                                
+                                            </div>
+                                        </a>
+                                    </div>
+        
+        
+                                    <div class="col-sm-6 col-md-4">
+                                            <a class="lightbox" href="./images/tip85/85.jpg">
+               
+                                                <div class="imgHolder">
+                                                    <img src="./images/tip85/85.jpg" style="border: 5px solid white;" alt="Park">
+                                                   
+                                                </div>
+                                            </a>
+                                    </div>
+        
+                                    <div class="col-sm-6 col-md-4">
+                                            <a class="lightbox" href="#">
+               
+                                                <div class="imgHolder">
+                                                   
+                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+
+
+                                        <!--tip 9525-->
+
+                                        <div class="col-sm-6 col-md-4">
+                                                <a class="lightbox" href="./images/tip9525/95.jpg">
+                   
+                                                    <div class="imgHolder">
+                                                        <img src="./images/tip9525/95.jpg" style="border: 5px solid white;" alt="Park">
+                                                        
+                                                    </div>
+                                                </a>
+                                            </div>
+                
+                                            <div class="col-sm-6 col-md-4">
+                                                    <a class="lightbox" href="./images/tip9525/95a.jpg">
+                       
+                                                        <div class="imgHolder">
+                                                            <img src="./images/tip9525/95a.jpg" style="border: 5px solid white;" alt="Park">
+                                                           
+                                                        </div>
+                                                    </a>
+                                            </div>
+                
+                                            <div class="col-sm-6 col-md-4">
+                                                    <a class="lightbox" href="#">
+                       
+                                                        <div class="imgHolder">
+                                                           
+                                                            
+                                                        </div>
+                                                    </a>
+                                                </div>
+                
+                        
+                        
+                        <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20105/tip105.jpg">
+
+                                 <div class="imgHolder">
+                                     <img src="./images/tip%20105/tip105.jpg" style="border: 5px solid white;" alt="Park">
+                                   
+                                 </div>
+                             </a>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20105/105a.jpg">
+                                 <img src="./images/tip%20105/105a.jpg" alt="Bridge">
+                             </a>
+                         </div>
+                         <div class="col-sm-12 col-md-4">
+                             <a class="lightbox" href="./images/tip%20105/105d.jpg">
+                                 <img src="./images/tip%20105/105d.jpg" alt="Tunnel">
+                             </a>
+                         </div>
+
+
+                         <!--tip110-->
+
+                         <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip110/110.jpg" style="border: 2px solid white;">
+                                    <img src="./images/tip110/110.jpg" style="border: 5px solid white;" alt="Coast">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip110/110a.jpg">
+                                    <img src="./images/tip110/110a.jpg" alt="Rails">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip110/110b.jpg">
+                                    <img src="./images/tip110/110b.jpg" alt="Traffic">
+                                </a>
+                            </div>
+
+
+
+                         <!--tip110-->
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20116/tip115.jpg" style="border: 2px solid white;">
+                                 <img src="./images/tip%20116/tip115.jpg" style="border: 5px solid white;" alt="Coast">
+                             </a>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20116/115a.jpg">
+                                 <img src="./images/tip%20116/115a.jpg" alt="Rails">
+                             </a>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20116/115b.jpg.jpg">
+                                 <img src="./images/tip%20116/115b.jpg" alt="Traffic">
+                             </a>
+                         </div>
+
+
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20120/120.jpg" style="border: 2px solid white;">
+                                 <img src="./images/tip%20120/120.jpg" style="border: 5px solid white;" alt="Coast">
+                             </a>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20120/120a.jpg">
+                                 <img src="./images/tip%20120/120a.jpg" alt="Rails">
+                             </a>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                             <a class="lightbox" href="./images/tip%20120/120b.jpg">
+                                 <img src="./images/tip%20120/120b.jpg" alt="Traffic">
+                             </a>
+                         </div>
+
+
+
+                         <!--tip126-->
+
+
+                         <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip126/126.jpg" style="border: 2px solid white;">
+                                    <img src="./images/tip126/126.jpg" style="border: 5px solid white;" alt="Coast">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip126/126a.jpg">
+                                    <img src="./images/tip126/126a.jpg" alt="Rails">
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="./images/tip126/126b.jpg">
+                                    <img src="./images/tip126/126b.jpg" alt="Traffic">
+                                </a>
+                            </div>
+   
+
+<!--130-->
+
+
+<div class="col-sm-6 col-md-4">
+        <a class="lightbox" href="./images/tip 130/130.jpg" style="border: 2px solid white;">
+            <img src="./images/tip 130/130.jpg" style="border: 5px solid white;" alt="Coast">
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <a class="lightbox" href="./images/tip 130/130a.jpg">
+            <img src="./images/tip 130/130a.jpg" alt="Rails">
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <a class="lightbox" href="#">
+           
+        </a>
+    </div>
+
+    <!--tip160-->
+    <div class="col-sm-6 col-md-4">
+            <a class="lightbox" href="./images/tip 160/160.jpg" style="border: 2px solid white;">
+                <img src="./images/tip 160/160.jpg" style="border: 5px solid white;" alt="Coast">
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a class="lightbox" href="./images/tip 160/160a.jpg">
+                <img src="./images/tip 160/160a.jpg" alt="Rails">
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <a class="lightbox" href="./images/tip 160/160b.jpg">
+                <img src="./images/tip 160/160b.jpg" alt="Traffic">
+            </a>
+        </div>
+
+        <!--tip175-->
+
+        <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/tip 178/175.jpg" style="border: 2px solid white;">
+                    <img src="./images/tip 178/175.jpg" style="border: 5px solid white;" alt="Coast">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/tip 178/175a.jpg">
+                    <img src="./images/tip 178/175a.jpg" alt="Rails">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/tip 178/175b.jpg">
+                    <img src="./images/tip 178/175b.jpg" alt="Traffic">
+                </a>
+            </div>
+
+            <!--tip340-->
+
+            <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="./images/tip 345/340.jpg" style="border: 2px solid white;">
+                        <img src="./images/tip 345/340.jpg" style="border: 5px solid white;" alt="Coast">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="./images/tip 345/340a.jpg">
+                        <img src="./images/tip 345/340a.jpg" alt="Rails">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="./images/tip 345/340b.jpg">
+                        <img src="./images/tip 345/340b.jpg" alt="Traffic">
+                    </a>
+                </div>
+
+
+
+
+
+                     </div>
+
+                 </div>
+                
+                 
+            </section>
+
+
+
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+             <script>
+                 baguetteBox.run('.tz-gallery');
+
+
+
+
+                 $(document).ready(function () {
+
+                     $('.tz-gallery').waypoint(function(direction){
+                         if(direction=="down"){
+                             $('#navbar').addClass('sticky');
+                         }else{
+                             $('#navbar').removeClass('sticky');
+                         }
+                     },{
+                         offset:'60px;'
+                     });
+
+                     /*Scrol on button*/
+
+                     $('.js--scroll-to-plan').click(function(){
+                         $('html, body').animate({scrollTop: $('.js--section-plan').offset().top},1000);
+                     });
+
+                     $('.js--scroll-to-start').click(function(){
+                         $('html, body').animate({scrollTop: $('.js--section-features').offset().top},1000);
+                     });
+
+
+
+                     /*NAVIGATION SCROLL*/
+
+                     // Select all links with hashes
+
+                     $(function(){
+                         $('a[href*="#"]')
+                         // Remove links that don't actually link to anything
+                                 .not('[href="#"]')
+                                 .not('[href="#0"]')
+                                 .click(function(event) {
+                                     // On-page links
+                                     if (
+                                             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                                             &&
+                                             location.hostname == this.hostname
+                                     ) {
+                                         // Figure out element to scroll to
+                                         var target = $(this.hash);
+                                         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                                         // Does a scroll target exist?
+                                         if (target.length) {
+                                             // Only prevent default if animation is actually gonna happen
+                                             event.preventDefault();
+                                             $('html, body').animate({
+                                                 scrollTop: target.offset().top
+                                             }, 1000, function() {
+                                                 // Callback after animation
+                                                 // Must change focus!
+                                                 var $target = $(target);
+                                                 $target.focus();
+                                                 if ($target.is(":focus")) { // Checking if the target was focused
+                                                     return false;
+                                                 } else {
+                                                     $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                                                     $target.focus(); // Set focus again
+                                                 };
+                                             });
+                                         }
+                                     }
+                                 });
+
+
+                     });
+
+                     /*Animation on scroll*/
+
+                     $('.js--wp-1').waypoint(function(direction){
+                         $('.js--wp-1').addClass('animated bounceInDown');
+                     },{
+                         offset:'50%'
+                     });
+
+                     $('.js--wp-2').waypoint(function(direction){
+                         $('.js--wp-2').addClass('animated fadeInUp');
+                     },{
+                         offset:'50%'
+                     });
+
+                     /*Mobile navigation*/
+
+                     $('.js--nav-icon').click(function(){
+                         var nav=$('.js--main-nav');
+                         var icon=$('.js--nav-icon i')
+                         nav.slideToggle(200);
+                         if(icon.hasClass('ion-navicon-round')){
+                             icon.addClass('ion-close-round');
+                             icon.removeClass('ion-navicon-round');
+                         }else{
+                             icon.addClass('ion-navicon-round');
+                             icon.removeClass('ion-close-round');
+                         }
+
+
+                     });
+
+
+
+                     /*MAPS*/
+
+                     var map =  new GMaps({
+                         div: '.map',
+                         lat: 38.7437396,
+                         lng:-9.2302438,
+                         zoom: 12
+                     });
+
+
+                     map.addMarker({
+                         lat: 38.7437396,
+                         lng: -9.2302438,
+                         title: 'Lisbon',
+                         infoWindow: {
+                             content: '<p>Our location</p>'
+                         }
+                     });
+
+
+                     /*38.7437396,-9.2302438*/
+
+
+                 });
+
+             </script>
+
+
+    </body>
+</html>

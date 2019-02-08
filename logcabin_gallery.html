@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hot-hot construction</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="./css/gallery-grid.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+
+    <style>
+        .carousel-item {
+            height: 100vh;
+            min-height: 300px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+
+
+
+        .u-center-text {
+            text-align: center !important; }
+
+        .u-margin-bottom6 {
+            margin-bottom: 30px !important; }
+
+        .u-margin-top6 {
+            margin-top: 60px !important; }
+
+        .heading-secondary {
+            color: white;
+            display: inline-block;
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+             -webkit-background-clip: text;
+             color: transparent;*/
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .btn, .btn:link, .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 10rem;
+            /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+
+            position: relative;
+            font-size: 13px;
+            /*Change for the <button> element*/
+            border-bottom: none;
+            cursor: pointer; }
+
+            @media only screen and (max-width: 600px) {
+                .btn, .btn:link, .btn:visited {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 10px 20;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    display: block;
+                    border-radius: 10rem;
+                    /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+        
+                    position: relative;
+                    font-size: 13px;
+                    /*Change for the <button> element*/
+                    border-bottom: none;
+                    cursor: pointer; }
+        
+}
+
+
+        .btn:hover {
+            /*go pomestuva kopceto nagore za 3 pikseli*/
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0; }
+
+        .btn:active, .btn:focus {
+            /*koga e kliknato*/
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+        .btn--white {
+            background-color: #777;
+            color: #fff; }
+        .btn--white::after {
+            background-color: #777;
+        }
+
+
+        .box img{
+            width:100%;
+            height: auto;
+            max-height: 285px;
+            margin-bottom:15px;
+        }
+
+        .box{
+            padding: 1%;
+        }
+
+
+        .imgHolder span {
+            position: absolute;
+            right: 27px;
+            bottom: 47px;
+            color: #777;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-weight: bolder;
+            padding: 10px;
+
+
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+<section class="section-semejni">
+
+    <div class="u-center-text u-margin-bottom8 ">
+        <h2 class="heading-secondary"style="color:#777">
+            Log Cabin Gallery
+
+        </h2>
+    </div>
+
+
+    <div id="navbar" class="u-center-text u-margin-bottom6">
+
+            <a href="logcabin_construction.html" class="btn btn--white ">CONSTRUCTION</a>
+            <a href="#" class="btn btn--white ">DETAILS FOR THE CONTRACT</a>
+    
+            
+        </div>
+
+
+
+
+
+    <div class="tz-gallery">
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika1.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika1.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika2.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika2.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika3.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika3.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika4.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika4.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika5.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika5.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika6.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika6.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika7.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika7.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika8.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika8.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika9.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika9.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika10.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika10.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika11.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika11.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika12.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika12.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
+</body>
+</html>

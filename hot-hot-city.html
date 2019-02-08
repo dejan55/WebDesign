@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hot-hot construction</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="./css/gallery-grid.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+
+    <style>
+
+
+        .u-center-text {
+            text-align: center !important; }
+
+        .u-margin-bottom6 {
+            margin-bottom: 30px !important; }
+
+        .u-margin-top6 {
+            margin-top: 60px !important; }
+
+        .heading-secondary {
+            color: white;
+            display: inline-block;
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+             -webkit-background-clip: text;
+             color: transparent;*/
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .btn, .btn:link, .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 10rem;
+            /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+
+            position: relative;
+            font-size: 13px;
+            /*Change for the <button> element*/
+            border-bottom: none;
+            cursor: pointer; }
+
+            @media only screen and (max-width: 600px) {
+                .btn, .btn:link, .btn:visited {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 10px 20;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    display: block;
+                    border-radius: 10rem;
+                    /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+        
+                    position: relative;
+                    font-size: 13px;
+                    /*Change for the <button> element*/
+                    border-bottom: none;
+                    cursor: pointer; }
+        
+}
+
+
+        .btn:hover {
+            /*go pomestuva kopceto nagore za 3 pikseli*/
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0; }
+
+        .btn:active, .btn:focus {
+            /*koga e kliknato*/
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+        .btn--white {
+            background-color: #777;
+            color: #fff; }
+        .btn--white::after {
+            background-color: #777;
+        }
+
+
+        .box img{
+            width:100%;
+            height: auto;
+            max-height: 285px;
+            margin-bottom:15px;
+        }
+
+        .box{
+            padding: 1%;
+        }
+
+
+        .imgHolder span {
+            position: absolute;
+            right: 27px;
+            bottom: 47px;
+            color: #777;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-weight: bolder;
+            padding: 10px;
+
+
+        }
+
+          /*MAIN NAVIGATION*/
+
+.main-nav{
+    /*float: right;*/
+    list-style: none;
+    margin-top:0px;
+    padding-left: 28%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-nav li{ /*site li elemnti vo main-nav*/
+    display: inline-block;/*za da bidat edno do drugo*/
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px ;
+    
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 5px 0;
+    text-decoration: none;
+     text-transform: uppercase;
+    color: #fff;
+    font-size: 80%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s;
+    font-weight: 600;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+/*MOBILE NAVIGATION*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: white;
+}
+
+
+    /*MOBILE NAVIGATION*/
+    .mobile-nav-icon{
+        float: left;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    .mobile-nav-icon i{
+        font-size: 200%;
+        color: white;
+    }
+
+
+    .navbar-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    header{
+    background-image:-webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))) ,url(./images/city_cover.JPG);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) ,url(./images/city_cover.JPG);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+      background-attachment: fixed;
+    
+}
+
+
+.header-text{
+    position: absolute;
+    width:1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color:#fff;
+}
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+ <!--TEST-->
+
+ <header>
+        <nav>
+             <div class="row">
+            
+                 
+                    <div class="navbar-wrapper" style="width:100%">
+     
+                        <ul class="main-nav js--main-nav" style="width:100%">
+                            <li><a href="index.html">Дома</a></li>
+                            <li><a href="zanas.html">За нас</a></li>
+                            <li><a href="ekokukji.html">Семејни еко куќи</a></li>
+                            <li><a href="brvnari.html">Брвнари</a></li>
+                            <li><a href="nastresnici.html">Настрешници</a></li>
+                            <li><a href="komercijalni.html">Комерцијални објекти</a></li>
+                            <li><a href="hot-hot-city.html">HOT-HOT CITY</a></li>
+    
+                            <li><a href="nov_proekt.html" style="color:red;font-weight:bold;">Нов Проект</a></li>
+                            <li><a href="kontakt.html">Контакт</a></li>
+    
+                            
+    
+                        </ul>
+                                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                                        
+                          
+                                    <a href="city_ang.html"> <img src="./images/ang.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-left:6px; margin-top:-160px;margin-right:4px;">
+                                    </a>
+                        
+                                    <a href="./under_construction/03-comming-soon.html">  <img src="./images/alb.png" class="znaminja-mobile" style="width: 32px; height: 32px; margin-top:-160px; margin-right:4px;"></a>
+                        
+                                     <img src="./images/mak.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-top:-160px;">
+        
+                                   
+                                
+        
+                            </div><!-- /navbar wrapper -->
+                 
+                 <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                 
+             </div>
+        </nav>
+        <div class="header-text">
+            <h1>ХОТ-ХОТ СИТИ</h1>
+            
+        </div>
+     </header>
+
+
+   
+<!--TEST-->  
+
+<section class="section-semejni">
+
+       
+
+    <div class="u-center-text u-margin-bottom8 ">
+        <h2 class="heading-secondary"style="margin-top:35px;color:#777">
+            ХОТ-ХОТ СИТИ
+        </h2>
+    </div>
+
+
+    <div id="navbar" class="u-center-text u-margin-bottom6">
+
+      
+        <a href="hothot-city_ceni.html" class="btn btn--white ">ЦЕНИ</a>
+
+        <a href="hot-hot-city_galerija.html" class="btn btn--white ">ГАЛЕРИЈА</a>
+    </div>
+
+   
+
+    <div class="row">
+           <!-- <div class="col-md-2" style="margin-right: 0rem;">
+                  <ul class="main-nav js--main-nav" >
+                          <li><a href="index.html">Дома</a></li>
+                          <li><a href="zanas.html">За нас</a></li>
+                          <li><a href="ekokukji.html">Eко куќи</a></li>
+                          <li><a href="brvnari.html">Брвнари</a></li>
+                          <li><a href="nastresnici.html">Настрешници</a></li>
+                          <li><a href="hot-hot-city.html">HOT-HOT CITY</a></li>
+                          <li><a href="kontakt.html">Контакт</a></li>
+
+                      </ul>
+          </div>-->
+          
+      <div class="col-md-11" style="margin-left:auto;margin-right:auto;">
+         
+        <p style="color:#777; text-align:justify">
+            Населбата HOT-HOT CITY е прва од низата населби што ќе се градат во иднина. Населбата се простира на површина од 17 000 м2 и како целина е оградена.
+          </p>
+          
+          <p style="color:#777;text-align:justify">
+                HOT-HOT CITY е лоцирана на 700 м од скопската обиколница и е со асфалтен пат дирекно поврзана со клучка. Овој тип на домување е широко распространет во Америка и во некои останати земји и истиот обезбедува безбедност, интимност и ексклузивност во домувањето. Секој купец на објект во HOT-HOT CITY добива сопствен имотен лист. Пред подпишувањето на договорот неопходно е да се потпише нотарски акт со кодексот на однесување.
+         </p>
+        
+         <p style="color:#777;text-align:justify">
+                                
+                Самата населба инфраструктурно е целина за себе и нејзините содржини обезбедуваат еден ексклузивен конфорен и безбеден живот.Во склопот на компанијата ХОТ-ХОТ која ќе ја менаџира оваа и сите останати населби ќе постојат служби за хортикултурно одржување на дворовите, слузба за одржување на базените, хаус-мајсторска служба. Користењето на овие служби ќе биде по желба на купувачите.
+
+        </p>
+                          
+                              
+            
+        <p style="color:#777;text-align:justify">
+                Обезбедувањето на наелбата заедно со мониторингот ќе биде извршувано од професионални обезбедувачи 24h на ден и тоа ќе биде задолжителен месечен надоместок на секој сопственик во HOT-HOT CITY.
+                          
+        </p>
+
+        <p style="color:#777;text-align:justify">
+                Влезот и излезот за сопствениците во HOT-HOT CITY ќе биде со посебни чип картици, а посетителите ке можат да влезат со претходно одобрување од сопственикот.
+        </p>
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-6">
+            <ul style="list-style:none;color:#777;font-weight:bold;">
+                <li style="margin-bottom:10px;">Безбедност во вашите домови</li>
+                <li style="margin-bottom:10px;">Главен влез со рампа</li>
+                <li style="margin-bottom:10px;">Камери и мониторинг на населбата</li>
+                <li style="margin-bottom:10px;"> Фитнес центар</li>
+                <li style="margin-bottom:10px;">Приватен биљард клуб</li>
+                <li style="margin-bottom:10px;">Супер маркет </li>
+                <li style="margin-bottom:10px;">Градинка и игротека</li>
+
+            </ul>
+        </div> 
+        <div class="col-md-6">
+            <ul style="list-style:none;color:#777;font-weight:bold;">
+                    <li style="margin-bottom:10px;">Плацеви од 220-500 м2</li>
+                    <li style="margin-bottom:10px;">Објекти од 100-250 м2</li>
+                    <li style="margin-bottom:10px;">Oбјекти со базен и BBQ</li>
+                    <li style="margin-bottom:10px;">Пешачка и џогинг патека</li>
+                    <li style="margin-bottom:10px;">Приватни улици</li>
+                    <li>Кодекс на однесување </li>
+                   
+    
+                </ul>
+            </div>  
+        </div>
+      </div>
+  </div>
+
+
+
+    <div class="tz-gallery">
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_3.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_3.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_1.jpg">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_1.jpg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_2.jpg">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_2.jpg" alt="Tunnel">
+                </a>
+            </div>
+
+<!--TIP 108B-->
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 Б_Page_3.jpg" style="border: 2px solid white;">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 Б_Page_3.jpg" style="border: 5px solid white;" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 Б_Page_1.jpg">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 Б_Page_1.jpg" alt="Rails">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 Б_Page_2.jpg">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 Б_Page_2.jpg" alt="Traffic">
+                </a>
+            </div>
+
+
+
+<!--tip200-->
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 200.jpg" style="border: 2px solid white;">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 200.jpg" style="border: 5px solid white;" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 200_Page_1.jpg">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 200_Page_1.jpg" alt="Rails">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 200_Page_2.jpg">
+                    <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 200_Page_2.jpg" alt="Traffic">
+                </a>
+            </div>
+
+<!--tip250-->
+
+<div class="col-sm-6 col-md-4">
+    <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 250.jpg" style="border: 2px solid white;">
+        <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 250.jpg" style="border: 5px solid white;" alt="Park">
+    </a>
+</div>
+<div class="col-sm-6 col-md-4">
+    <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_1_Page_1.jpg">
+        <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_1_Page_1.jpg" alt="Rails">
+    </a>
+</div>
+<div class="col-sm-6 col-md-4">
+    <a class="lightbox" href="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_1_Page_2.jpg">
+        <img src="./images/ХОТ ХОТ СИТИ/ТИПОВИ 108 A_Page_1_Page_2.jpg" alt="Traffic">
+    </a>
+</div>
+
+
+</div>
+
+    </div>
+
+
+<div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.5972338292045!2d21.45380566510617!3d42.05181632920873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13546ab73c437d53%3A0x3c8c119de9f4294e!2sHot-Hot+City!5e0!3m2!1sen!2smk!4v1522335209879" width="100%" height="450" frameborder="0" style="border:1px solid black" allowfullscreen></iframe>
+</div>
+<br>
+<div class="row">
+   
+    <div class="col-md-8 text-center">
+            <a href="./images/naselba-big.png"><img src="./images/naselba-big.png" class="img img-responsive"style="z-index:999;width:50%;height:600px;border:2px solid grey"></a>
+    </div>
+</div>
+
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
+</body>
+</html>

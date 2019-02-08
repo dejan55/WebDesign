@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hot-hot construction</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="./css/gallery-grid.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+
+    <style>
+
+
+        .u-center-text {
+            text-align: center !important; }
+
+        .u-margin-bottom6 {
+            margin-bottom: 60px !important; }
+
+        .u-margin-top6 {
+            margin-top: 60px !important; }
+
+        .heading-secondary {
+            color: white;
+            display: inline-block;
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            /* background-image: linear-gradient(to right, #7ed56f, #28b485);
+             -webkit-background-clip: text;
+             color: transparent;*/
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .btn, .btn:link, .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 10rem;
+            /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+
+            position: relative;
+            font-size: 13px;
+            /*Change for the <button> element*/
+            border-bottom: none;
+            cursor: pointer; }
+
+
+            @media only screen and (max-width: 600px) {
+                .btn, .btn:link, .btn:visited {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 10px 20;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    display: block;
+                    border-radius: 10rem;
+                    /*kolku vreme da trae animacijata (na hover pomestuvanjeto nagore ke trae .2sek)*/
+        
+                    position: relative;
+                    font-size: 13px;
+                    /*Change for the <button> element*/
+                    border-bottom: none;
+                    cursor: pointer; }
+        
+}
+
+
+        .btn:hover {
+            /*go pomestuva kopceto nagore za 3 pikseli*/
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0; }
+
+        .btn:active, .btn:focus {
+            /*koga e kliknato*/
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+        .btn--white {
+            background-color: #777;
+            color: #fff; }
+        .btn--white::after {
+            background-color: #777fff;
+        }
+
+
+        .box img{
+            width:100%;
+            height: auto;
+            max-height: 285px;
+            margin-bottom:15px;
+        }
+
+        .box{
+            padding: 1%;
+        }
+
+
+        .imgHolder span {
+            position: absolute;
+            right: 27px;
+            bottom: 47px;
+            color: #777;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-weight: bolder;
+            padding: 10px;
+
+
+        }
+
+        
+               /*MAIN NAVIGATION*/
+
+.main-nav{
+    /*float: right;*/
+    list-style: none;
+    margin-top:0px;
+    padding-left: 28%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-nav li{ /*site li elemnti vo main-nav*/
+    display: inline-block;/*za da bidat edno do drugo*/
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px ;
+    
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 5px 0;
+    text-decoration: none;
+     text-transform: uppercase;
+    color: #fff;
+    font-size: 80%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s;
+    font-weight: 600;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+/*MOBILE NAVIGATION*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: white;
+}
+
+
+    /*MOBILE NAVIGATION*/
+    .mobile-nav-icon{
+        float: left;
+        margin-top: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    .mobile-nav-icon i{
+        font-size: 200%;
+        color: white;
+    }
+
+
+    .navbar-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    header{
+    background-image:-webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.7)),to(rgba(0, 0, 0, 0.7))) ,url(./images/brvnara.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) ,url(./images/brvnara.jpg);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+      background-attachment: fixed;
+    
+}
+
+
+.header-text{
+    position: absolute;
+    width:1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color:#fff;
+}
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+ <!--TEST-->
+
+ <header>
+        <nav>
+             <div class="row">
+            
+                 
+                    <div class="navbar-wrapper" style="width:100%">
+     
+                        <ul class="main-nav js--main-nav" style="width:100%">
+                            <li><a href="index_ang.html">Home</a></li>
+                            <li><a href="about_us.html">About us</a></li>
+                            <li><a href="eco_houses.html">Family Eco Houses</a></li>
+                            <li><a href="log_cabin.html">Log Cabin</a></li>
+                            <li><a href="awning.html">Awning</a></li>
+                                       <li><a href="komercijalni.html">Comercial Buildings</a></li>
+                                       <li><a href="city_ang.html">HOT-HOT CITY</a></li>
+        
+                                       <li><a href="nov_proekt.html" style="color:red;font-weight:bold;">New Project</a></li>
+                                       <li><a href="contact.html">Contact</a></li>
+        
+                                       
+        
+                                   </ul>
+        
+                                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                                        
+                          
+                                    <a href="log_cabin.html"> <img src="./images/ang.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-left:6px; margin-top:-160px;margin-right:4px;">
+                                    </a>
+                        
+                                    <a href="./under_construction/03-comming-soon.html">  <img src="./images/alb.png" class="znaminja-mobile" style="width: 32px; height: 32px; margin-top:-160px; margin-right:4px;"></a>
+                        
+                                    <a href="brvnari.html"> <img src="./images/mak.png"  class="znaminja-mobile"  style="width: 32px; height: 32px;margin-top:-160px;"></a> 
+        
+                                   
+                                
+        
+                            </div><!-- /navbar wrapper -->
+                 
+                 <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                 
+             </div>
+        </nav>
+        <div class="header-text">
+            <h1>LOG CABIN</h1>
+            
+        </div>
+     </header>
+
+<section class="section-semejni">
+
+
+        
+
+    <div class="u-center-text u-margin-bottom8 ">
+        <h2 class="heading-secondary" style="margin-top:35px;color:#777;">
+            Log Cabin
+        </h2>
+    </div>
+
+
+    <div id="navbar" class="u-center-text u-margin-bottom6">
+
+        <a href="logcabin_construction.html" class="btn btn--white ">CONSTRUCTION</a>
+        <a href="#" class="btn btn--white ">PRICES</a>
+
+       
+    </div>
+    
+    <div class="row">
+           <!-- <div class="col-md-2" style="margin-right: 0rem;">
+                  <ul class="main-nav js--main-nav" >
+                          <li><a href="index.html">Дома</a></li>
+                          <li><a href="zanas.html">За нас</a></li>
+                          <li><a href="ekokukji.html">Eко куќи</a></li>
+                          <li><a href="brvnari.html">Брвнари</a></li>
+                          <li><a href="nastresnici.html">Настрешници</a></li>
+                          <li><a href="hot-hot-city.html">HOT-HOT CITY</a></li>
+                          <li><a href="kontakt.html">Контакт</a></li>
+
+                      </ul>
+          </div>-->
+          
+      <div class="col-md-11" style="margin-left:auto;margin-right:auto;">
+          <p style="color:#777;text-align:justify;">
+            The high quality of HOT-HOT is a result of the tradition in the making of wooden houses. Life and rest in HOT-HOT houses made of logs is in perfect harmony with nature. Get the nervous and stressful life back in a natural, peaceful and healthy life and enjoy the beauties of nature. HOT-HOT houses made exclusively of wood with a circular or semicircular section offer a comfortable living space and natural radiation to the greatest extent. The quality of HOHOTHOT houses is high both in shape and variety of aritectonic forms and in the important properties of the tree as a building material. Proper processing of the tree as a living matrial research, technological development and long-term experience guarantees high qualities and that HOT-HOT is located in the leading places in Macedonia and beyond. HOT-HOUSE houses adapt to the individual life of all inhabitants without limitation, from planning to construction to your taste and lifestyle. Unlike the rest of the materials, the tree breathes, which means that the tree is diffusely and passable in both directions.
+
+          </p>
+          
+          <p style="color:#777;text-align:justify;">
+            Wooden walls always regulate humidity in the room by absorbing moisture and releasing it when the outside temperatures change. The tree can withstand more than 100 years of different weather changes. Wooden structures are more resistant and more flexible than steel or masonry. Wood is a natural and environmentally friendly material. Except as a building material, the tree with its structure, color and odor affects human health and as such is considered the healthiest building material. The wall panels are made of ecological OSV plates and are coated with plasterboard plates. As an insulating material, natural mineral wool and styrofoam are used, which are excellent natural, thermal and sound insulation. The electrostatic properties of the wood prevents static electricity and dust flow in a room that is very useful for people who are prone to allergy. Unforgettable is the feeling of one night sleeping in a cave
+        </p>
+        
+    </div>
+  </div>
+
+
+
+    <div class="tz-gallery">
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika1.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika1.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika2.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika2.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika3.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika3.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika4.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika4.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika5.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika5.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika6.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika6.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika7.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika7.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika8.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika8.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika9.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika9.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika10.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika10.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika11.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika11.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika12.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika12.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika13.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika13.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika14.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika14.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika15.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika15.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika16.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika16.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika17.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika17.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika18.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika18.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika19.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika19.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika20.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika20.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika21.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika21.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika22.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika22.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika23.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika23.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika24.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika24.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika25.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika25.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika26.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika26.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika27.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika27.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika28.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika28.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika29.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika29.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika30.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika30.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/sliki brvnari/slika31.JPG">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/sliki brvnari/slika31.JPG" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+           
+
+
+          
+           
+
+           
+           <!--PREFRLENI OD BRVNARI GALERIJA
+
+             <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika1.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika1.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika2.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika2.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika3.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika3.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika4.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika4.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika5.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika5.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika6.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika6.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika7.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika7.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika8.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika8.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika9.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika9.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika10.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika10.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika11.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika11.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="./images/brvnari/galerija/slika12.jpg">
+
+                    <div class="imgHolder">
+                        <img src="./images/brvnari/galerija/slika12.jpg" style="border: 5px solid white;" alt="Park">
+
+                    </div>
+                </a>
+            </div>
+
+-->
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
+</body>
+</html>
